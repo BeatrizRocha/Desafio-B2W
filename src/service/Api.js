@@ -1,20 +1,24 @@
-import axios from "axios"
+import axios from 'axios';
 
-const api = axios.create({
-    baseURL: "https://swapi.co/api/",
-    mode: 'no-cors',
+const client = axios.create({
+    baseURL: "https://cors-anywhere.herokuapp.com/https://swapi.co/api/", // Is an API to enable cross-origin between the main server and the front-end application
     headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-    },
-    credentials: 'same-origin'
+        'Accept': 'application/json',
+        'Content-Type': 'application/json; charset=utf-8',
+        'Accept-Language': 'pt-BR,pt;q=0.5'
+    }
 });
 
-api.interceptors.response.use(function (response) {
-    return response
-}, function (error) {
-    console.log(error)
-    return Promise.reject(error)
-});
+const api = function(options) {
+    const onSuccess = (typeof options.onSuccess !== "undefined") ? options.onSuccess : response => {
+        return response.data;
+    }
+    const onError = (typeof options.onError !== "undefined") ? options.onError : error => {
+        console.debug(error);
+        return false;
+    }
 
-export default api
+    return client(options).then(onSuccess).catch(onError);
+}
+
+export default api;
