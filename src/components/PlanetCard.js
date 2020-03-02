@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-
 import { PlanetService } from '../service/PlanetService'
 import { DivCard, PlanetInfo, PlanetFilmsInfo } from "../styles"
 import { Card, Button } from 'react-bootstrap'
 import { Dimmer, Loader } from 'semantic-ui-react'
-// import { Card, CardContent, CardActions, Button, CardHeader } from '@material-ui/core';
 
 export default class PlanetCard extends Component {
     constructor(props){
