@@ -14,7 +14,7 @@ Para utilizar este repositório você deverá realizar o download deste projeto:
 
 ```shell
 git clone https://github.com/BeatrizRocha/Desafio-B2W.git
-```https:localhost:5000
+```
 
 Após o comando anterior, será necessário o download das dependências do projeto. Para isto, digite o seguinte comando na raiz do projeto:
 
