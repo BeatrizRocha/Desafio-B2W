@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const client = axios.create({
-    baseURL: "https://cors-anywhere.herokuapp.com/https://swapi.co/api/", // "https://cors-anywhere.herokuapp.com/" Is an API to enable cross-origin between the main server and the front-end application
+    baseURL: "https://cors-anywhere.herokuapp.com/https://swapi.dev/api/", // "https://cors-anywhere.herokuapp.com/" Is an API to enable cross-origin between the main server and the front-end application
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json; charset=utf-8',
